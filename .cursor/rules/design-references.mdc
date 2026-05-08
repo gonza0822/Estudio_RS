@@ -1,0 +1,33 @@
+---
+description: Referencias visuales y de tono — estudios jurídicos (Argentina / LatAm)
+alwaysApply: true
+---
+
+# Referencias de diseño (sitio institucional del estudio)
+
+No copiar textos, ni marca, ni estructura legal de terceros. Usar solo como **referencia de tono, jerarquía visual y seriedad** para un estudio **pequeño** (dos profesionales).
+
+## Sitios de referencia
+
+- [Marval](https://www.marval.com/lang=es)
+- [Bomchil](https://bomchil.com)
+- [Bruchou & Funes de Rioja](https://bruchoufunes.com)
+- [Nicholson y Cano](https://nicholsonycano.com.ar)
+- [PAGBAM](https://pagbam.com)
+- [Beccar Varela](https://beccarvarela.com)
+
+## Qué transmitir (como ellos, a escala menor)
+
+- Aspecto **profesional y sobrio**: mucho espacio en blanco, tipografía legible, paleta contenida (blanco/gris/marino o similar).
+- **Jerarquía clara**: titulares fuertes, párrafos cortos, CTAs visibles hacia **contacto**.
+- **Confianza** sin ruido: fotografía formal del equipo si existe; logo limpio.
+
+## Qué no imitar en el MVP
+
+- Megamenús, rankings extensos, intranet, hubs de contenido masivos, múltiples idiomas complejos, secciones corporativas que este proyecto **no** incluye salvo decisión explícita.
+
+## Alcance de páginas acordado
+
+Incluir como base del sitio: **Home**, **Quiénes somos**, **Nuestro equipo**, **Áreas de práctica**, **Contacto** — responsive y mobile-first según `performance-responsive.mdc`.
+
+Al implementar UI o contenido, alinear el resultado a estas referencias **sin** igualar pixel a pixel ni plagiar copy.

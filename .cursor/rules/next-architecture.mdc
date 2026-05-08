@@ -1,0 +1,48 @@
+---
+description: Arquitectura obligatoria Next.js — sitio institucional estudio jurídico
+alwaysApply: true
+---
+
+# Arquitectura del proyecto (obligatoria)
+
+Stack fijo: **Next.js (App Router)**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**. Deploy **Vercel**; imágenes con **`next/image`** y assets estáticos en **`public/`**.
+
+## Estructura de carpetas
+
+- **`app/`**: rutas y layouts. Una carpeta por URL (`page.tsx`, `layout.tsx`). Route Handlers solo en **`app/api/**/route.ts`** (ej. contacto).
+- **`components/layout/`**: shell compartido (`Header`, `Footer`, contenedores de página).
+- **`components/sections/`**: bloques grandes por página o sección reutilizable (Hero, áreas, CTA).
+- **`components/ui/`**: primitivas pequeñas y reutilizables (`Button`, `Container`, tipografía de sección).
+- **`lib/`**: utilidades (`cn`, validación de formularios), constantes y datos tipados (`content/` opcional bajo `lib/` o raíz).
+
+No crear carpetas alternativas paralelas (`src/components` si ya existe `components/` en raíz — mantener una sola convención; si el repo usa `src/app`, seguir **solo** el árbol `src/` de forma consistente).
+
+## Server vs Client Components
+
+- Por defecto: **Server Components**. Sin `"use client"` salvo necesidad real.
+- **`"use client"`** solo donde haya: Framer Motion, estado React (`useState`, `useReducer`), efectos (`useEffect`), listeners del navegador, formularios controlados complejos, menú móvil interactivo.
+
+Extraer subcomponentes cliente en archivos dedicados si una página mezcla mucho servidor + cliente.
+
+## Estilos y UI
+
+- Estilos principalmente **Tailwind**. CSS suelto solo para casos que Tailwind no cubra bien (ej. scrollbar), en **`app/globals.css`** o un módulo CSS local **colocado junto al componente**.
+- **Framer Motion**: importar solo desde componentes cliente; evitar animar en Server Components.
+
+## Datos y backend
+
+- Contenido estático del estudio: objetos tipados en **`lib/`** (o `content/*.ts`), no hardcode disperso en JSX sin centralizar.
+- **Sin Redux**, sin capa global de estado para este MVP.
+- **Sin base de datos** ni cliente Mongo/Postgres salvo decisión explícita del proyecto. Formulario de contacto: **Route Handler** + proveedor de email (variables en servidor).
+
+## Imágenes
+
+- Archivos en **`public/`** (ej. `public/images/...`). En código: **`next/image`** con `alt` obligatorio en contenido relevante.
+
+## Qué no hacer (anti-patrones)
+
+- No introducir **Express/Nest** u otro servidor Node separado para este sitio salvo requisito nuevo documentado.
+- No mezclar **pages Router** (`pages/`) con **App Router** (`app/`) en el mismo proyecto.
+- No subir **secretos** al cliente (`NEXT_PUBLIC_*` solo para datos realmente públicos).
+
+Al crear archivos nuevos, respetar esta jerarquía. Si una tarea obliga una excepción, documentar en el PR/commit **por qué** desvía de estas reglas.

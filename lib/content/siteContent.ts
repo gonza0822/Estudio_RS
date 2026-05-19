@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const SITE_URL = "https://estudiosr.com";
 
@@ -56,16 +56,30 @@ export const practiceAreas = [
 
 export const teamMembers = [
   {
+    id: "silvana-gonzalez",
     name: "Dra. Silvana Gonzalez",
     role: "Socia fundadora",
     bio: "Abogada con más de 12 años de experiencia en derecho laboral y asesoría corporativa para pymes.",
+    formation:
+      "Abogada (UBA). Posgrado en Derecho del Trabajo y actualización permanente en negociación colectiva y compliance laboral.",
+    experience:
+      "Asesora a pymes y empresas familiares en estructuras de contratación, prevención de contingencias y representación en conflictos laborales.",
+    history:
+      "Inició su práctica en estudios orientados a relaciones laborales y luego consolidó un enfoque de asesoramiento cercano para clientes con necesidades operativas concretas.",
     imageSrc: "/images/team/silvana-gonzalez.png",
     imageAlt: "Retrato profesional de la Dra. Silvana Gonzalez",
   },
   {
+    id: "rodrigo-ceballos",
     name: "Dr. Rodrigo Ceballos",
     role: "Socio fundador",
     bio: "Especialista en contratos, derecho societario y estrategia legal para personas y empresas familiares.",
+    formation:
+      "Abogado (Universidad Nacional de Córdoba). Diplomatura en Derecho Societario y Contratos Comerciales.",
+    experience:
+      "Trabaja en estructuración contractual, reorganización societaria y acompañamiento legal en operaciones comerciales para empresas de distintos rubros.",
+    history:
+      "Comenzó su carrera en áreas de derecho comercial y desarrolló una práctica enfocada en traducir temas jurídicos complejos en decisiones de negocio claras.",
     imageSrc: "/images/team/rodrigo-ceballos.png",
     imageAlt: "Retrato profesional del Dr. Rodrigo Ceballos",
   },

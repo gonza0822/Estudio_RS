@@ -37,16 +37,17 @@ export default function NuestroEquipoPage() {
                   className={cn(
                     "relative min-h-[20rem] md:absolute md:inset-y-0 md:w-[58%]",
                     index % 2 === 0
-                      ? "md:left-0 md:[clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]"
-                      : "md:right-0 md:[clip-path:polygon(0_0,100%_0,100%_100%,12%_100%)]",
+                      ? "md:left-0 md:[clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]"
+                      : "md:right-0 md:[clip-path:polygon(0_0,100%_0,100%_100%,8%_100%)]",
                   )}
                 >
+                  <div className="absolute inset-0 bg-slate-950" />
                   <Image
                     src={member.imageSrc}
                     alt={member.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, 58vw"
-                    className="object-cover object-top"
+                    className="object-contain object-center p-1 md:p-3"
                   />
                 </div>
 
@@ -54,8 +55,8 @@ export default function NuestroEquipoPage() {
                   className={cn(
                     "relative bg-slate-50 p-6 text-slate-900 md:absolute md:inset-y-0 md:flex md:w-[58%] md:items-center md:p-10 lg:p-12",
                     index % 2 === 0
-                      ? "md:right-0 md:[clip-path:polygon(12%_0,100%_0,100%_100%,0_100%)] md:pl-20 lg:pl-24"
-                      : "md:left-0 md:[clip-path:polygon(0_0,88%_0,100%_100%,0_100%)] md:pr-20 lg:pr-24",
+                      ? "md:right-0 md:[clip-path:polygon(8%_0,100%_0,100%_100%,0_100%)] md:pl-24 lg:pl-28"
+                      : "md:left-0 md:[clip-path:polygon(0_0,92%_0,100%_100%,0_100%)] md:pr-24 lg:pr-28",
                   )}
                 >
                   <div>

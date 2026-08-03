@@ -1,134 +1,132 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://estudiosr.com";
+export const SITE_URL = "https://estudiocg.com.ar";
 
 export const firmContent = {
-  name: "Estudio SR",
+  name: "Estudio Ceballos – Gonzalez",
+  nameShort: "Ceballos – Gonzalez",
+  slogan: "Seguridad, comunicación, confianza y soluciones.",
   shortDescription:
-    "Asesoramiento legal estratégico para empresas y personas con foco en cercanía, claridad y resultados.",
+    "Somos un estudio jurídico dedicado a ayudar al trabajador. Te asesoramos en cuestiones laborales, previsionales y civiles.",
   longDescription:
-    "Somos un estudio jurídico boutique que combina experiencia técnica y atención personalizada para acompañar decisiones importantes con criterio legal y visión práctica.",
+    "Somos un estudio jurídico dedicado a ayudar al trabajador. Te asesoramos en cuestiones laborales, previsionales y civiles. Solucionamos tus problemas.",
   phone: "+54 11 1234 5678",
-  email: "contacto@estudiosr.com",
+  email: "contacto@estudiocg.com.ar",
   address: "Ciudad Autónoma de Buenos Aires, Argentina",
 };
 
+export const aboutContent = {
+  intro:
+    "Somos un estudio jurídico dedicado al derecho laboral, previsional y civil, comprometido en acompañar a cada persona con seriedad, cercanía y sentido práctico en momentos que suelen ser difíciles de atravesar solos.",
+  values: [
+    {
+      title: "Seguridad",
+      description:
+        "Analizamos cada caso con el rigor necesario para que tomes decisiones informadas, sabiendo con claridad qué podés esperar en cada etapa del proceso.",
+    },
+    {
+      title: "Comunicación",
+      description:
+        "Te explicamos tu situación en términos claros, sin palabras difíciles, y te mantenemos al tanto de cada avance sin que tengas que reclamarlo.",
+    },
+    {
+      title: "Confianza",
+      description:
+        "Construimos una relación honesta y de largo plazo, donde sabés que tu caso está en manos de quien te lo va a explicar sin rodeos, aciertos y límites incluidos.",
+    },
+    {
+      title: "Solución de problemas",
+      description:
+        "Buscamos la vía más efectiva para resolver tu situación, priorizando resultados concretos sobre procesos innecesarios.",
+    },
+  ],
+} as const;
+
 export const navItems = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "Inicio" },
   { href: "/quienes-somos", label: "Quiénes somos" },
   { href: "/nuestro-equipo", label: "Nuestro equipo" },
   { href: "/areas-de-practica", label: "Áreas de práctica" },
   { href: "/contacto", label: "Contacto" },
 ] as const;
 
-export const practiceAreas = [
-  {
-    title: "Derecho laboral",
-    description:
-      "Asesoramiento preventivo y resolución de conflictos laborales para empleadores y profesionales independientes.",
-  },
-  {
-    title: "Contratos civiles y comerciales",
-    description:
-      "Redacción, revisión y negociación de contratos con foco en reducir riesgos y dar seguridad jurídica.",
-  },
-  {
-    title: "Derecho societario",
-    description:
-      "Acompañamiento legal para constitución de sociedades, reorganizaciones y cumplimiento corporativo básico.",
-  },
-  {
-    title: "Sucesiones y planificación patrimonial",
-    description:
-      "Asistencia integral en procesos sucesorios y organización patrimonial familiar con trato cercano.",
-  },
-  {
-    title: "Asesoría para pymes",
-    description:
-      "Soporte legal continuo para pequeñas y medianas empresas en su operación diaria y crecimiento.",
-  },
-  {
-    title: "Mediación y resolución de conflictos",
-    description:
-      "Estrategias de negociación y abordaje de disputas para lograr soluciones eficientes sin perder tiempo ni recursos.",
-  },
-] as const;
+export const practiceAreasContent = {
+  intro:
+    "Nuestro estudio ofrece asesoramiento integral y especializado tanto en derecho del trabajo, como derecho previsional y civil. Desde asesoramiento preventivo, hasta despidos, jubilaciones, sucesiones, divorcios y alimentos. También asesoramos impositivamente. Acompañamos al trabajador en cada etapa del proceso.",
+  areas: [
+    {
+      title: "Derecho laboral",
+      summary:
+        "Asesoramos en conflictos laborales desde la etapa prejudicial hasta el juicio en CABA o PBA: despidos, trabajo en negro, telegramas y reclamos ante el SECLO o en tribunales.",
+      paragraphs: [
+        "Asesoramos a trabajadores en todas las instancias de un conflicto laboral, desde la etapa prejudicial hasta el litigio ante los tribunales de CABA o PBA. Ya sea que estés atravesando un despido, con o sin causa, una situación de trabajo en negro, o necesites enviar un telegrama laboral para reclamar tu situación, te acompañamos para que sepas con claridad qué podés reclamar y cómo hacerlo.",
+        "Intervenimos ante el SECLO en la instancia conciliatoria obligatoria, y evaluamos junto a cada cliente si conviene cerrar un acuerdo laboral o avanzar hacia el reclamo judicial por diferencias salariales o indemnizaciones.",
+        "Nos ocupamos también de las consecuencias de los accidentes de trabajo y las enfermedades profesionales, incluyendo reclamos contra la ART y la determinación de incapacidades laborales cuando la cobertura resulta insuficiente.",
+      ],
+    },
+    {
+      title: "Derecho previsional",
+      summary:
+        "Te acompañamos en jubilación, retiro y reajuste de haberes ante ANSES o en la vía judicial, con un seguimiento cercano en cada paso del trámite.",
+      paragraphs: [
+        "Acompañamos a nuestros clientes en todo el proceso de jubilación, retiro y reajuste de haberes, tanto en la gestión administrativa ante ANSES como en la vía judicial cuando es necesario. Si estás por jubilarte y querés saber con anticipación cómo te conviene hacerlo, si tu jubilación fue mal liquidada, te la rechazaron, o necesitás iniciar el trámite y no sabés por dónde empezar, te asesoramos en cada paso con un seguimiento cercano y personalizado.",
+        "Trabajamos también los reajustes de haberes para quienes ya están jubilados y consideran que su beneficio no refleja correctamente los aportes realizados a lo largo de su vida laboral.",
+      ],
+    },
+    {
+      title: "Derecho civil",
+      summary:
+        "Sucesiones, divorcios y alimentos: te explicamos tus opciones con claridad y te acompañamos en cada etapa del proceso.",
+      paragraphs: [
+        "Nos encargamos de sucesiones, divorcios y alimentos, acompañando a nuestros clientes en procesos que suelen ser difíciles de atravesar, con un trato cercano y un asesoramiento claro en cada etapa. Analizamos cada situación de manera estratégica, para que sepas con claridad qué opciones tenés y cuál es el camino más conveniente para tu caso.",
+      ],
+    },
+  ],
+} as const;
+
+export const practiceAreas = practiceAreasContent.areas;
 
 export const teamMembers = [
   {
     id: "silvana-gonzalez",
-    name: "Dra. Silvana Gonzalez",
+    name: "Dra. Silvana Mariel González",
     role: "Socia fundadora",
-    bio: "Abogada con más de 12 años de experiencia en derecho laboral y asesoría corporativa para pymes.",
-    formation:
-      "Abogada (UBA). Posgrado en Derecho del Trabajo y actualización permanente en negociación colectiva y compliance laboral.",
-    experience:
-      "Asesora a pymes y empresas familiares en estructuras de contratación, prevención de contingencias y representación en conflictos laborales.",
-    history:
-      "Inició su práctica en estudios orientados a relaciones laborales y luego consolidó un enfoque de asesoramiento cercano para clientes con necesidades operativas concretas.",
-    imageSrc: "/images/team/silvana-gonzalez.png",
-    imageAlt: "Retrato profesional de la Dra. Silvana Gonzalez",
+    bio: "Abogada y Contadora Pública con más de 30 años de experiencia en el sector privado.",
+    highlights: [
+      "Abogada y Contadora Pública. Diploma de Honor (UBA – Derecho).",
+      "Más de 30 años de experiencia en el sector privado.",
+      "Especialista en derecho laboral, previsional, civil y registral, además de contabilidad e impuestos.",
+      "Perito oficial en distintos fueros judiciales desde hace más de 20 años.",
+    ],
+    imageSrc: "/images/team/silvana-gonzalez-20260731180544.png",
+    imageAlt: "Retrato profesional de la Dra. Silvana Mariel González",
+    imageOnLeft: true,
   },
   {
     id: "rodrigo-ceballos",
-    name: "Dr. Rodrigo Ceballos",
+    name: "Dr. Rodrigo Daniel Ceballos",
     role: "Socio fundador",
-    bio: "Especialista en contratos, derecho societario y estrategia legal para personas y empresas familiares.",
-    formation:
-      "Abogado (Universidad Nacional de Córdoba). Diplomatura en Derecho Societario y Contratos Comerciales.",
-    experience:
-      "Trabaja en estructuración contractual, reorganización societaria y acompañamiento legal en operaciones comerciales para empresas de distintos rubros.",
-    history:
-      "Comenzó su carrera en áreas de derecho comercial y desarrolló una práctica enfocada en traducir temas jurídicos complejos en decisiones de negocio claras.",
-    imageSrc: "/images/team/rodrigo-ceballos.png",
-    imageAlt: "Retrato profesional del Dr. Rodrigo Ceballos",
+    bio: "Abogado (UBA) y docente, con experiencia en derecho laboral, previsional y civil.",
+    highlights: [
+      "Abogado egresado de la Universidad de Buenos Aires y docente, desempeñándose como Ayudante de cátedra en Derecho Internacional Privado en la misma casa de estudios.",
+      "Formación internacional, con pasantías en la Comisión Interamericana de Derechos Humanos (OEA, Washington DC) y en la Conferencia de La Haya de Derecho Internacional Privado.",
+      "Experiencia en derecho laboral, previsional y civil.",
+    ],
+    imageSrc: "/images/team/rodrigo-ceballos-20260803072611.png",
+    imageAlt: "Retrato profesional del Dr. Rodrigo Daniel Ceballos",
+    imageOnLeft: false,
   },
 ] as const;
 
-export const heroCarouselSlides = [
-  {
-    id: "legal-office-meeting",
-    imageUrl:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop",
-    alt: "Sala de reuniones en estudio jurídico",
-  },
-  {
-    id: "law-books-desk",
-    imageUrl:
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop",
-    alt: "Biblioteca jurídica y escritorio profesional",
-  },
-  {
-    id: "courthouse-columns",
-    imageUrl:
-      "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1920&auto=format&fit=crop",
-    alt: "Columnas de un edificio judicial",
-  },
-  {
-    id: "legal-document-signature",
-    imageUrl:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1920&auto=format&fit=crop",
-    alt: "Firma de documentos legales en despacho",
-  },
-  {
-    id: "city-court-building",
-    imageUrl:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1920&auto=format&fit=crop",
-    alt: "Edificio institucional en zona financiera",
-  },
-  {
-    id: "meeting-room-documents",
-    imageUrl:
-      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1920&auto=format&fit=crop",
-    alt: "Mesa de reunión con documentación legal",
-  },
-  {
-    id: "corporate-law-office",
-    imageUrl:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",
-    alt: "Oficina corporativa moderna vinculada al ámbito legal",
-  },
-] as const;
+export const heroImage = {
+  src: "/images/hero/balanza-derecho.jpg",
+  alt: "Balanza de la justicia, símbolo del estudio jurídico",
+} as const;
+
+export const contactBackgroundImage = {
+  src: "/images/contacto/uba-derecho.jpg",
+  alt: "Fachada de la Facultad de Derecho de la Universidad de Buenos Aires",
+} as const;
 
 /** Builds default metadata objects for page-level SEO. */
 export function buildPageMetadata(

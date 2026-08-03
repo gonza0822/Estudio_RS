@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { PracticeAreasPreview } from "@/components/sections/PracticeAreasPreview";
 import { TeamPreview } from "@/components/sections/TeamPreview";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { buildPageMetadata } from "@/lib/content/siteContent";
+import { buildPageMetadata, firmContent } from "@/lib/content/siteContent";
 
 export const metadata: Metadata = buildPageMetadata(
-  "Estudio SR | Inicio",
-  "Conocé Estudio SR: asesoramiento legal personalizado para personas, profesionales y pymes.",
+  `${firmContent.name} | Inicio`,
+  firmContent.longDescription,
   "/",
 );
 
@@ -19,17 +20,24 @@ export default function Home() {
       <HomeHero />
       <PracticeAreasPreview />
       <TeamPreview />
-      <section className="py-16 md:py-20">
+      <section className="pb-16 md:pb-20">
         <Reveal>
-          <Container className="rounded-2xl bg-white p-8 shadow-sm md:p-12">
-            <h2 className="text-balance text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl">
-              Compromiso con una atención clara y cercana
-            </h2>
-            <p className="mt-4 max-w-3xl text-pretty text-base leading-7 text-slate-600">
-              En Estudio SR trabajamos cada caso con análisis técnico, comunicación transparente
-              y estrategias realistas para que cada cliente entienda su situación legal y tome
-              decisiones con confianza.
-            </p>
+          <Container>
+            <div className="rounded-3xl bg-beige/70 px-7 py-10 text-center md:px-12 md:py-14">
+              <h2 className="mx-auto max-w-2xl text-balance font-serif text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+                Contanos tu situación y vemos juntos cómo avanzar
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-ink-muted">
+                En {firmContent.nameShort} te escuchamos, te explicamos las opciones con claridad y
+                buscamos la solución más concreta para tu caso.
+              </p>
+              <Link
+                href="/contacto"
+                className="mt-8 inline-flex rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-navy-soft"
+              >
+                Hablemos
+              </Link>
+            </div>
           </Container>
         </Reveal>
       </section>

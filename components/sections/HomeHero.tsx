@@ -1,45 +1,60 @@
 ﻿"use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { HeroBackgroundCarousel } from "@/components/sections/HeroBackgroundCarousel";
 import { Container } from "@/components/ui/Container";
-import { firmContent } from "@/lib/content/siteContent";
+import { firmContent, heroImage } from "@/lib/content/siteContent";
 
-/** Renders the hero section with a lightweight entrance animation. */
+/** Renders a full-bleed hero using the justice-scale photograph. */
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[56vh] items-center py-16 text-slate-50 md:min-h-[60vh] md:py-20">
-      <HeroBackgroundCarousel />
-      <Container>
+    <section className="relative isolate flex min-h-[480px] items-center overflow-hidden md:min-h-[540px] lg:min-h-[580px]">
+      <Image
+        src={heroImage.src}
+        alt={heroImage.alt}
+        fill
+        priority
+        quality={90}
+        sizes="100vw"
+        className="object-cover object-[75%_center] md:object-right"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-cream via-cream/80 to-transparent"
+        aria-hidden="true"
+      />
+
+      <Container className="relative z-10 py-12 md:py-14">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="relative z-10 mx-auto max-w-3xl text-center"
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="max-w-xl md:max-w-2xl"
         >
-          <p className="text-sm uppercase tracking-[0.18em] text-amber-400">Estudio jurídico boutique</p>
-          <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+          <p className="text-sm font-medium text-navy">Hola, estamos para ayudarte</p>
+          <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
             {firmContent.name}
           </h1>
-          <p className="mt-6 text-pretty text-base leading-7 text-slate-300 md:text-lg">
+          <p className="mt-4 font-serif text-lg leading-7 text-ink md:text-xl">
+            {firmContent.slogan}
+          </p>
+          <p className="mt-4 max-w-xl text-pretty text-base leading-7 text-ink-muted">
             {firmContent.longDescription}
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/contacto"
-              className="w-full rounded-md bg-amber-500 px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-400 sm:w-auto"
+              className="inline-flex items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-navy-soft"
             >
-              Solicitar asesoramiento
+              Escribinos
             </Link>
             <Link
               href="/areas-de-practica"
-              className="w-full rounded-md border border-slate-600 px-6 py-3 text-sm font-semibold transition-colors hover:border-slate-400 hover:bg-slate-900 sm:w-auto"
+              className="inline-flex items-center justify-center rounded-full border border-ink/15 bg-surface/85 px-6 py-3 text-sm font-semibold text-ink transition-colors duration-200 hover:border-navy/40 hover:bg-surface"
             >
-              Ver áreas de práctica
+              Cómo podemos ayudarte
             </Link>
           </div>
         </motion.div>

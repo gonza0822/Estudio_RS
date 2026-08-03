@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { buildPageMetadata } from "@/lib/content/siteContent";
+import { aboutContent, buildPageMetadata, firmContent } from "@/lib/content/siteContent";
 
 export const metadata: Metadata = buildPageMetadata(
-  "Estudio SR | Quiénes somos",
-  "Conocé la visión y valores de Estudio SR, un estudio jurídico boutique centrado en la cercanía y la excelencia técnica.",
+  `${firmContent.name} | Quiénes somos`,
+  aboutContent.intro,
   "/quienes-somos",
 );
 
@@ -16,39 +16,17 @@ export default function QuienesSomosPage() {
     <section className="py-16 md:py-20">
       <Container>
         <Reveal>
-          <SectionHeading
-            title="Quiénes somos"
-            description="Somos un estudio jurídico independiente orientado a brindar asesoramiento serio, práctico y humano."
-          />
+          <SectionHeading title="Quiénes somos" description={aboutContent.intro} />
         </Reveal>
-        <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
-          <Reveal>
-            <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Cercanía</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Acompañamos cada caso con trato directo, seguimiento real y disponibilidad para
-                resolver dudas en cada etapa.
-              </p>
-            </article>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Rigor técnico</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Combinamos análisis jurídico sólido con estrategia para proteger intereses y
-                minimizar riesgos.
-              </p>
-            </article>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Enfoque práctico</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Buscamos soluciones claras y ejecutables, evitando complejidad innecesaria y
-                priorizando resultados.
-              </p>
-            </article>
-          </Reveal>
+        <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2">
+          {aboutContent.values.map((value, index) => (
+            <Reveal key={value.title} delay={(index % 2) * 0.08} className="h-full">
+              <article className="flex h-full flex-col rounded-2xl bg-surface p-6 md:p-7">
+                <h2 className="font-serif text-xl font-semibold text-ink">{value.title}</h2>
+                <p className="mt-3 flex-1 text-sm leading-7 text-ink-muted">{value.description}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist_Mono, Nunito_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { buildPageMetadata } from "@/lib/content/siteContent";
+import { buildPageMetadata, firmContent } from "@/lib/content/siteContent";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -16,8 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = buildPageMetadata(
-  "Estudio SR | Asesoramiento legal estratégico",
-  "Estudio SR brinda asesoramiento legal para personas y empresas con enfoque práctico, cercano y profesional.",
+  `${firmContent.name} | Asesoramiento laboral, previsional y civil`,
+  firmContent.longDescription,
 );
 
 export default function RootLayout({
@@ -28,9 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${nunitoSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-slate-50 text-slate-900">
+      <body className="min-h-full bg-cream font-sans text-ink">
         <div className="flex min-h-full flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

@@ -1,35 +1,51 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { buildPageMetadata, firmContent } from "@/lib/content/siteContent";
+import {
+  buildPageMetadata,
+  contactBackgroundImage,
+  firmContent,
+} from "@/lib/content/siteContent";
 
 export const metadata: Metadata = buildPageMetadata(
-  "Estudio SR | Contacto",
-  "Contactá a Estudio SR para una consulta legal y recibí asesoramiento personalizado.",
+  `${firmContent.name} | Contacto`,
+  "Agenda tu consulta inicial. Completa el siguiente formulario para que podamos contactarte.",
   "/contacto",
 );
 
 /** Renders contact details and a simple lead form layout. */
 export default function ContactoPage() {
   return (
-    <section className="py-16 md:py-20">
-      <Container>
+    <section className="relative isolate overflow-hidden py-16 md:py-20">
+      <Image
+        src={contactBackgroundImage.src}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-cream/60" aria-hidden="true" />
+
+      <Container className="relative z-10">
         <Reveal>
           <SectionHeading
             title="Contacto"
-            description="Contanos tu consulta y te responderemos a la brevedad para coordinar una primera conversación."
+            description="Agenda tu consulta inicial. Completa el siguiente formulario para que podamos contactarte."
           />
         </Reveal>
-        <div className="mx-auto mt-10 grid max-w-5xl gap-6 lg:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-2">
           <Reveal>
-            <article className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Datos de contacto</h2>
-              <p className="mt-4 text-sm leading-6 text-slate-600">{firmContent.address}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{firmContent.phone}</p>
+            <article className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
+              <h2 className="font-serif text-xl font-semibold text-ink">Datos de contacto</h2>
+              <p className="mt-4 text-sm leading-6 text-ink-muted">{firmContent.address}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-muted">{firmContent.phone}</p>
               <a
                 href={`mailto:${firmContent.email}`}
-                className="mt-2 inline-block text-sm text-slate-700 underline decoration-slate-300 transition-colors hover:text-slate-950"
+                className="mt-2 inline-block text-sm text-navy underline decoration-sand transition-colors duration-200 hover:text-ink"
               >
                 {firmContent.email}
               </a>
@@ -37,42 +53,42 @@ export default function ContactoPage() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <form className="rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">Enviá tu consulta</h2>
+            <form className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
+              <h2 className="font-serif text-xl font-semibold text-ink">Escribinos</h2>
               <div className="mt-5 grid gap-4">
-                <label className="grid gap-2 text-sm font-medium text-slate-700" htmlFor="fullName">
+                <label className="grid gap-2 text-sm font-medium text-ink" htmlFor="fullName">
                   Nombre y apellido
                   <input
                     id="fullName"
                     name="fullName"
                     type="text"
-                    className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition-shadow focus:border-slate-500 focus:ring-2 focus:ring-slate-300/70"
+                    className="h-11 rounded-xl border border-border-soft bg-cream/40 px-3 text-sm text-ink outline-none transition-shadow duration-200 focus:border-navy focus:ring-2 focus:ring-navy/15"
                     placeholder="Tu nombre"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-slate-700" htmlFor="email">
+                <label className="grid gap-2 text-sm font-medium text-ink" htmlFor="email">
                   Email
                   <input
                     id="email"
                     name="email"
                     type="email"
-                    className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition-shadow focus:border-slate-500 focus:ring-2 focus:ring-slate-300/70"
-                    placeholder="nombre@empresa.com"
+                    className="h-11 rounded-xl border border-border-soft bg-cream/40 px-3 text-sm text-ink outline-none transition-shadow duration-200 focus:border-navy focus:ring-2 focus:ring-navy/15"
+                    placeholder="tu@email.com"
                   />
                 </label>
-                <label className="grid gap-2 text-sm font-medium text-slate-700" htmlFor="message">
+                <label className="grid gap-2 text-sm font-medium text-ink" htmlFor="message">
                   Mensaje
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-shadow focus:border-slate-500 focus:ring-2 focus:ring-slate-300/70"
+                    className="rounded-xl border border-border-soft bg-cream/40 px-3 py-2 text-sm text-ink outline-none transition-shadow duration-200 focus:border-navy focus:ring-2 focus:ring-navy/15"
                     placeholder="Contanos brevemente tu consulta."
                   />
                 </label>
                 <button
                   type="submit"
-                  className="mt-2 h-11 rounded-md bg-slate-900 px-4 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+                  className="mt-2 h-11 rounded-full bg-navy px-4 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-navy-soft"
                 >
                   Enviar consulta
                 </button>

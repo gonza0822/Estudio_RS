@@ -9,9 +9,12 @@ import {
   firmContent,
 } from "@/lib/content/siteContent";
 
+const contactIntro =
+  "Agenda tu consulta inicial. Completa el siguiente formulario para que podamos contactarte.";
+
 export const metadata: Metadata = buildPageMetadata(
   `${firmContent.name} | Contacto`,
-  "Agenda tu consulta inicial. Completa el siguiente formulario para que podamos contactarte.",
+  contactIntro,
   "/contacto",
 );
 
@@ -28,27 +31,32 @@ export default function ContactoPage() {
         className="object-cover object-center"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-cream/60" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-cream/90 via-cream/78 to-cream/70"
+        aria-hidden="true"
+      />
 
       <Container className="relative z-10">
         <Reveal>
-          <SectionHeading
-            title="Contacto"
-            description="Agenda tu consulta inicial. Completa el siguiente formulario para que podamos contactarte."
-          />
+          <div className="mx-auto max-w-3xl rounded-2xl bg-cream/90 px-6 py-6 backdrop-blur-sm md:px-8 md:py-7">
+            <SectionHeading
+              title="Contacto"
+              description={contactIntro}
+              descriptionClassName="text-ink/85"
+            />
+          </div>
         </Reveal>
         <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-2">
           <Reveal>
             <article className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
               <h2 className="font-serif text-xl font-semibold text-ink">Datos de contacto</h2>
               <p className="mt-4 text-sm leading-6 text-ink-muted">{firmContent.address}</p>
-              <p className="mt-2 text-sm leading-6 text-ink-muted">{firmContent.phone}</p>
-              <a
-                href={`mailto:${firmContent.email}`}
-                className="mt-2 inline-block text-sm text-navy underline decoration-sand transition-colors duration-200 hover:text-ink"
-              >
-                {firmContent.email}
-              </a>
+              <p className="mt-2 text-sm leading-6 text-ink-muted">
+                {firmContent.phone || "Teléfono: a confirmar"}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-ink-muted">
+                {firmContent.email || "Email: a confirmar"}
+              </p>
             </article>
           </Reveal>
 

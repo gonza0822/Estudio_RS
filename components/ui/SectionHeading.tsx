@@ -4,6 +4,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   className?: string;
+  descriptionClassName?: string;
   level?: "h1" | "h2";
 };
 
@@ -12,6 +13,7 @@ export function SectionHeading({
   title,
   description,
   className,
+  descriptionClassName,
   level = "h1",
 }: SectionHeadingProps) {
   const TitleTag = level;
@@ -22,7 +24,12 @@ export function SectionHeading({
         {title}
       </TitleTag>
       {description ? (
-        <p className="mt-4 text-pretty text-base leading-7 text-ink-muted md:text-lg">
+        <p
+          className={cn(
+            "mt-4 text-pretty text-base leading-7 text-ink-muted md:text-lg",
+            descriptionClassName,
+          )}
+        >
           {description}
         </p>
       ) : null}

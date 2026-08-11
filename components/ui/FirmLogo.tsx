@@ -14,11 +14,11 @@ export function FirmLogo({ className, priority = false }: FirmLogoProps) {
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src="/images/brand/logo-estudio-sr.png"
+        src="/images/brand/logo-ceballos-gonzalez.png"
         alt={firmContent.name}
-        width={484}
-        height={72}
-        className="h-8 w-auto md:h-9"
+        width={631}
+        height={144}
+        className="h-10 w-auto md:h-11"
         priority={priority}
       />
     </span>

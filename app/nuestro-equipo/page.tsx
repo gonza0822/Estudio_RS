@@ -7,7 +7,7 @@ import { buildPageMetadata, firmContent, teamMembers } from "@/lib/content/siteC
 
 export const metadata: Metadata = buildPageMetadata(
   `${firmContent.name} | Nuestro equipo`,
-  `Conocé a ${teamMembers.map((member) => member.name).join(" y ")}, socios de ${firmContent.name}.`,
+  `Conocé a ${teamMembers.map((member) => member.name).join(" y ")}, abogados de ${firmContent.name}.`,
   "/nuestro-equipo",
 );
 
@@ -48,8 +48,8 @@ export default function NuestroEquipoPage() {
                       className={cn(
                         "object-cover",
                         imageOnLeft
-                          ? "object-[38%_12%] md:object-[32%_10%]"
-                          : "object-[62%_14%] md:object-[68%_12%]",
+                          ? "object-[center_18%] md:object-[center_12%]"
+                          : "object-[center_20%] md:object-[center_15%]",
                       )}
                       priority={index === 0}
                     />

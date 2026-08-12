@@ -47,8 +47,8 @@ export default function ContactoPage() {
             />
           </div>
         </Reveal>
-        <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-2 lg:items-stretch">
-          <div className="flex flex-col gap-8">
+        <div className="mx-auto mt-10 grid max-w-5xl items-stretch gap-8 lg:grid-cols-2">
+          <div className="flex h-full min-h-0 flex-col gap-8">
             <Reveal>
               <article className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
                 <h2 className="font-serif text-xl font-semibold text-ink">Datos de contacto</h2>
@@ -62,22 +62,20 @@ export default function ContactoPage() {
                 </p>
               </article>
             </Reveal>
-            <Reveal className="min-h-[16rem] flex-1" delay={0.06}>
-              <div className="h-full min-h-[16rem] overflow-hidden rounded-2xl border border-border-soft bg-surface/95">
-                <iframe
-                  title="Mapa del estudio en Jerónimo Salguero 2310, CABA"
-                  src={firmContent.mapsEmbedSrc}
-                  className="h-full min-h-[16rem] w-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
-              </div>
-            </Reveal>
+            <div className="relative min-h-[16rem] flex-1 overflow-hidden rounded-2xl border border-border-soft bg-surface/95">
+              <iframe
+                title="Mapa del estudio en Jerónimo Salguero 2310, CABA"
+                src={firmContent.mapsEmbedSrc}
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
 
-          <Reveal delay={0.08}>
-            <form className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
+          <Reveal className="h-full" delay={0.08}>
+            <form className="flex h-full flex-col rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
               <h2 className="font-serif text-xl font-semibold text-ink">Escribinos</h2>
               <div className="mt-5 grid gap-4">
                 <label className="grid gap-2 text-sm font-medium text-ink" htmlFor="fullName">

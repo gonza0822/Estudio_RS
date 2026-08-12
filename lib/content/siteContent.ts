@@ -12,7 +12,7 @@ export const firmContent = {
     "Somos un estudio jurídico dedicado a ayudar al trabajador. Te asesoramos en cuestiones laborales, previsionales y civiles. Solucionamos tus problemas.",
   phone: "",
   email: "",
-  address: "Jerónimo Salguero 2310, piso 9, dpto. 35, CABA",
+  address: "Jerónimo Salguero 2310, Piso 9°, Dpto. 35, CABA",
   visitNote: "Agendá una cita antes de asistir al estudio.",
   mapsEmbedSrc:
     "https://maps.google.com/maps?q=Jeronimo+Salguero+2310,+CABA&hl=es&z=16&output=embed",

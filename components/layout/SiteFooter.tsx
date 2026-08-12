@@ -13,10 +13,10 @@ export function SiteFooter() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-6">
             <FirmLogo />
-            <p className="mt-3 max-w-md text-sm leading-6 text-ink-muted md:mt-4 md:leading-7">
+            <p className="mt-3 font-serif text-base text-navy md:mt-4">{firmContent.slogan}</p>
+            <p className="mt-3 max-w-md text-sm leading-6 text-ink-muted md:leading-7">
               {firmContent.shortDescription}
             </p>
-            <p className="mt-3 font-serif text-base text-navy">{firmContent.slogan}</p>
           </div>
 
           <nav aria-label="Enlaces del pie" className="lg:col-span-3">

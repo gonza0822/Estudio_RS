@@ -47,19 +47,34 @@ export default function ContactoPage() {
             />
           </div>
         </Reveal>
-        <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-2">
-          <Reveal>
-            <article className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
-              <h2 className="font-serif text-xl font-semibold text-ink">Datos de contacto</h2>
-              <p className="mt-4 text-sm leading-6 text-ink-muted">{firmContent.address}</p>
-              <p className="mt-2 text-sm leading-6 text-ink-muted">
-                {firmContent.phone || "Teléfono: a confirmar"}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-ink-muted">
-                {firmContent.email || "Email: a confirmar"}
-              </p>
-            </article>
-          </Reveal>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-2 lg:items-stretch">
+          <div className="flex flex-col gap-8">
+            <Reveal>
+              <article className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">
+                <h2 className="font-serif text-xl font-semibold text-ink">Datos de contacto</h2>
+                <p className="mt-4 text-sm font-medium leading-6 text-navy">{firmContent.visitNote}</p>
+                <p className="mt-3 text-sm leading-6 text-ink-muted">{firmContent.address}</p>
+                <p className="mt-2 text-sm leading-6 text-ink-muted">
+                  {firmContent.phone || "Teléfono: a confirmar"}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-ink-muted">
+                  {firmContent.email || "Email: a confirmar"}
+                </p>
+              </article>
+            </Reveal>
+            <Reveal className="min-h-[16rem] flex-1" delay={0.06}>
+              <div className="h-full min-h-[16rem] overflow-hidden rounded-2xl border border-border-soft bg-surface/95">
+                <iframe
+                  title="Mapa del estudio en Jerónimo Salguero 2310, CABA"
+                  src={firmContent.mapsEmbedSrc}
+                  className="h-full min-h-[16rem] w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
+            </Reveal>
+          </div>
 
           <Reveal delay={0.08}>
             <form className="rounded-2xl border border-border-soft bg-surface/95 p-7 backdrop-blur-[2px]">

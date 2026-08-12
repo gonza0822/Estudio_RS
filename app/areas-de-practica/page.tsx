@@ -19,13 +19,13 @@ export const metadata: Metadata = buildPageMetadata(
 /** Shows the full set of legal services offered by the firm. */
 export default function AreasDePracticaPage() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="relative z-10 min-h-full bg-surface py-16 md:py-20">
       <Container>
         <Reveal>
           <SectionHeading
             title="Áreas de práctica"
             description={practiceAreasContent.intro}
-            descriptionClassName="text-justify md:text-center"
+            descriptionClassName="text-justify"
           />
         </Reveal>
         <div className="mx-auto mt-12 grid max-w-5xl gap-6">
@@ -34,7 +34,7 @@ export default function AreasDePracticaPage() {
 
             return (
               <Reveal key={area.title} delay={(index % 2) * 0.08}>
-                <article className="overflow-hidden rounded-2xl bg-surface md:grid md:min-h-[18rem] md:grid-cols-2">
+                <article className="overflow-hidden rounded-2xl bg-navy md:grid md:min-h-[18rem] md:grid-cols-2">
                   <div
                     className={cn(
                       "relative min-h-[12rem] md:min-h-full",
@@ -52,8 +52,8 @@ export default function AreasDePracticaPage() {
                       className={cn(
                         "absolute inset-0",
                         imageOnLeft
-                          ? "bg-gradient-to-r from-transparent via-surface/30 to-surface"
-                          : "bg-gradient-to-l from-transparent via-surface/30 to-surface",
+                          ? "bg-gradient-to-r from-transparent via-navy/30 to-navy"
+                          : "bg-gradient-to-l from-transparent via-navy/30 to-navy",
                       )}
                       aria-hidden="true"
                     />
@@ -64,8 +64,8 @@ export default function AreasDePracticaPage() {
                       imageOnLeft ? "md:order-2" : "md:order-1",
                     )}
                   >
-                    <h2 className="font-serif text-xl font-semibold text-ink">{area.title}</h2>
-                    <div className="mt-3 space-y-4 text-justify text-sm leading-7 text-ink-muted">
+                    <h2 className="font-serif text-xl font-semibold text-cream">{area.title}</h2>
+                    <div className="mt-3 space-y-4 text-justify text-sm leading-7 text-cream/85">
                       {area.paragraphs.map((paragraph, paragraphIndex) => (
                         <p key={`${area.title}-${paragraphIndex}`}>{paragraph}</p>
                       ))}

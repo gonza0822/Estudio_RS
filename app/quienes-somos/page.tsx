@@ -14,15 +14,19 @@ export const metadata: Metadata = buildPageMetadata(
 /** Presents the firm's identity, values, and way of working. */
 export default function QuienesSomosPage() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="relative z-10 min-h-full bg-surface py-16 md:py-20">
       <Container>
         <Reveal>
-          <SectionHeading title="Quiénes somos" description={aboutContent.intro} />
+          <SectionHeading
+            title="Quiénes somos"
+            description={aboutContent.intro}
+            descriptionClassName="text-justify"
+          />
         </Reveal>
         <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2">
           {aboutContent.values.map((value, index) => (
             <Reveal key={value.title} delay={(index % 2) * 0.08} className="h-full">
-              <article className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-surface">
+              <article className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-navy">
                 <div className="relative h-36 w-full md:h-40">
                   <Image
                     src={value.imageSrc}
@@ -32,13 +36,13 @@ export default function QuienesSomosPage() {
                     className="object-cover"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-surface/20"
+                    className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20"
                     aria-hidden="true"
                   />
                 </div>
                 <div className="relative z-10 flex flex-1 flex-col px-6 pb-6 md:px-7 md:pb-7">
-                  <h2 className="font-serif text-xl font-semibold text-ink">{value.title}</h2>
-                  <p className="mt-3 flex-1 text-justify text-sm leading-7 text-ink-muted">
+                  <h2 className="font-serif text-xl font-semibold text-cream">{value.title}</h2>
+                  <p className="mt-3 flex-1 text-justify text-sm leading-7 text-cream/85">
                     {value.description}
                   </p>
                 </div>

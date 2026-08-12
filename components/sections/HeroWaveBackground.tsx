@@ -24,8 +24,8 @@ type WaveLine = {
 const LINE_COUNT = 16;
 const STEP = 8;
 const LINE_GROUPS = [
-  { color: "61,90,128", min: 0.05, max: 0.16 },
-  { color: "82,112,153", min: 0.03, max: 0.1 },
+  { color: "6,64,138", min: 0.12, max: 0.3 },
+  { color: "26,102,196", min: 0.08, max: 0.2 },
 ] as const;
 
 /** Builds the sine-wave path string for one line at a given time. */

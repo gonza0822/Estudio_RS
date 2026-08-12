@@ -38,11 +38,12 @@ export default function ContactoPage() {
 
       <Container className="relative z-10">
         <Reveal>
-          <div className="mx-auto max-w-3xl rounded-2xl bg-cream/90 px-6 py-6 backdrop-blur-sm md:px-8 md:py-7">
+          <div className="mx-auto max-w-3xl rounded-2xl bg-navy px-6 py-6 md:px-8 md:py-7">
             <SectionHeading
               title="Contacto"
               description={contactIntro}
-              descriptionClassName="text-ink/85"
+              titleClassName="text-cream"
+              descriptionClassName="text-cream/85"
             />
           </div>
         </Reveal>

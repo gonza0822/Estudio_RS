@@ -26,17 +26,17 @@ export default function Home() {
         <section className="py-16 md:py-20">
           <Reveal>
             <Container>
-              <div className="rounded-3xl border border-border-soft bg-cream px-7 py-10 text-center shadow-[0_12px_40px_rgba(44,40,36,0.08)] md:px-12 md:py-14">
-                <h2 className="mx-auto max-w-2xl text-balance font-serif text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+              <div className="rounded-3xl bg-navy px-7 py-10 text-center shadow-[0_12px_40px_rgba(6,64,138,0.22)] md:px-12 md:py-14">
+                <h2 className="mx-auto max-w-2xl text-balance font-serif text-2xl font-semibold tracking-tight text-cream md:text-3xl">
                   Contanos tu situación y vemos juntos cómo avanzar
                 </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-ink">
+                <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-cream/90">
                   En {firmContent.nameShort} te escuchamos, te explicamos las opciones con claridad y
                   buscamos la solución más concreta para tu caso.
                 </p>
                 <Link
                   href="/contacto"
-                  className="mt-8 inline-flex rounded-full bg-navy px-7 py-3.5 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-navy-soft"
+                  className="mt-8 inline-flex rounded-full bg-cream px-7 py-3.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-surface"
                 >
                   Hablemos
                 </Link>

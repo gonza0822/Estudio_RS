@@ -27,7 +27,7 @@ El sitio debe sentirse **familiar y cercano**, no corporativo ni “big law”. 
 
 ## Paleta de marca (sitio)
 
-Orientación acordada: **crema, beige y blanco** como base; **azul suave y negro cálido** solo en detalles. Texto **oscuro sobre fondo claro**. Evitar fondos oscuros dominantes, tipografía muy rígida, mayúsculas excesivas y look empresarial frío.
+Color principal: **azul marino** (`#06408A`). Fondos claros **azulados** (`#B9D8F7`), texto navy sobre claro. Hover: `#1A66C4`. Tipografía contemporánea: **Outfit** (títulos) + **Work Sans** (cuerpo). Paleta **fija** en todos los dispositivos y modos (no dark mode). Evitar serif clásica, crema cálido y fondos oscuros de página completa.
 
 ## Qué transmitir
 
@@ -38,7 +38,7 @@ Orientación acordada: **crema, beige y blanco** como base; **azul suave y negro
 ## Qué no imitar en el MVP
 
 - Megamenús, rankings extensos, intranet, hubs de contenido masivos, múltiples idiomas complejos, secciones corporativas que este proyecto **no** incluye salvo decisión explícita.
-- Estética de estudio grande (sellos duros, navy dominante, copy frío).
+- Estética de estudio grande (megamenús, sellos duros, copy frío). Navy es el acento de marca, no un fondo oscuro de toda la página.
 
 ## Alcance de páginas acordado
 

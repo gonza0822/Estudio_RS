@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { FirmLogo } from "@/components/ui/FirmLogo";
 import { firmContent, navItems } from "@/lib/content/siteContent";
@@ -8,7 +8,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 border-t border-border-soft bg-beige/50">
+    <footer className="relative z-10 border-t border-border-soft bg-beige">
       <Container className="py-8 md:py-14">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-6">

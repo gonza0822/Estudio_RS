@@ -64,7 +64,7 @@ export function SiteHeader() {
           isHidden && !isMenuOpen ? "-translate-y-[120%]" : "translate-y-0",
         )}
       >
-        <div className="pointer-events-auto w-full border-y border-border-soft/80 bg-cream/95 shadow-[0_8px_30px_rgba(44,40,36,0.06)] backdrop-blur-md">
+        <div className="pointer-events-auto w-full border-y border-navy/10 bg-cream/95 shadow-[0_8px_30px_rgba(6,64,138,0.16)] backdrop-blur-md">
           <Container className="flex h-16 items-center justify-between md:h-[4.5rem]">
             <Link href="/" aria-label={`Ir al inicio — ${firmContent.name}`}>
               <FirmLogo priority />

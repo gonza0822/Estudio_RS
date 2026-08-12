@@ -14,6 +14,7 @@ export function TeamPreview() {
             level="h2"
             title="Quiénes te acompañan"
             description={aboutContent.intro}
+            descriptionClassName="text-justify"
           />
         </Reveal>
         <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2">
@@ -22,7 +23,9 @@ export function TeamPreview() {
               <article className="flex h-full flex-col rounded-2xl bg-surface p-6 md:p-7">
                 <h3 className="font-serif text-xl font-semibold text-ink">{member.name}</h3>
                 <p className="mt-2 text-sm font-medium text-navy">{member.role}</p>
-                <p className="mt-3 flex-1 text-sm leading-7 text-ink-muted">{member.bio}</p>
+                <p className="mt-3 flex-1 text-justify text-sm leading-7 text-ink-muted">
+                  {member.bio}
+                </p>
               </article>
             </Reveal>
           ))}

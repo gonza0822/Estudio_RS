@@ -42,42 +42,42 @@ export function HomeHero() {
           alt={heroImage.alt}
           fill
           priority
-          quality={90}
+          quality={85}
           sizes="100vw"
-          className="scale-110 object-cover object-[75%_center] blur-[6px] md:object-right"
+          className="-scale-x-100 object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/84 via-cream/72 to-cream/86" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/75 via-navy/35 to-transparent" />
         <HeroWaveBackground />
       </div>
 
-      <Container className="relative z-10 pt-28 pb-12 text-center md:pt-32 md:pb-16">
+      <Container className="relative z-10 pt-28 pb-12 text-left md:pt-32 md:pb-16">
         <motion.div
-          className="mx-auto max-w-xl md:max-w-2xl"
+          className="max-w-4xl"
           initial={reduceMotion ? false : "hidden"}
           animate={reduceMotion ? undefined : "visible"}
           variants={heroTextParent}
         >
           <motion.h1
             variants={heroTextItem}
-            className="font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl lg:text-[2.6rem] lg:leading-[1.15]"
+            className="whitespace-nowrap font-display text-[clamp(0.72rem,3.5vw,1.7rem)] font-semibold uppercase tracking-[0.07em] text-white"
           >
             {firmContent.name}
           </motion.h1>
           <motion.p
             variants={heroTextItem}
-            className="mt-3 font-serif text-lg leading-7 text-navy md:text-xl"
+            className="mt-3 font-serif text-lg leading-7 text-white md:text-xl"
           >
             {firmContent.slogan}
           </motion.p>
           <motion.p
             variants={heroTextItem}
-            className="mx-auto mt-3 max-w-xl text-pretty text-base leading-7 text-ink-muted"
+            className="mt-3 max-w-xl text-pretty text-base leading-7 text-white/90"
           >
             {firmContent.longDescription}
           </motion.p>
           <motion.div
             variants={heroTextItem}
-            className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mt-6 flex flex-col items-start gap-3 sm:flex-row"
           >
             <Link
               href="/contacto"
@@ -87,7 +87,7 @@ export function HomeHero() {
             </Link>
             <Link
               href="/areas-de-practica"
-              className="inline-flex items-center justify-center rounded-full border border-ink/15 bg-surface/85 px-6 py-3 text-sm font-semibold text-ink transition-colors duration-200 hover:border-navy/40 hover:bg-surface"
+              className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/20"
             >
               Cómo podemos ayudarte
             </Link>

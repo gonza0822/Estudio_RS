@@ -133,8 +133,8 @@ export const teamMembers = [
 ] as const;
 
 export const heroImage = {
-  src: "/images/hero/balanza-derecho.jpg",
-  alt: "Balanza de la justicia, símbolo del estudio jurídico",
+  src: "/images/hero/steven-cordes-columnas.webp",
+  alt: "Columnas de un edificio institucional, fondo del estudio jurídico",
 } as const;
 
 export const contactBackgroundImage = {

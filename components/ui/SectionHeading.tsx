@@ -1,9 +1,10 @@
-﻿import { cn } from "@/lib/cn";
+import { cn } from "@/lib/cn";
 
 type SectionHeadingProps = {
   title: string;
   description?: string;
   className?: string;
+  titleClassName?: string;
   descriptionClassName?: string;
   level?: "h1" | "h2";
 };
@@ -13,6 +14,7 @@ export function SectionHeading({
   title,
   description,
   className,
+  titleClassName,
   descriptionClassName,
   level = "h1",
 }: SectionHeadingProps) {
@@ -20,7 +22,12 @@ export function SectionHeading({
 
   return (
     <div className={cn("mx-auto max-w-3xl text-center", className)}>
-      <TitleTag className="text-balance font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+      <TitleTag
+        className={cn(
+          "text-balance font-serif text-3xl font-semibold tracking-tight text-navy md:text-4xl",
+          titleClassName,
+        )}
+      >
         {title}
       </TitleTag>
       {description ? (

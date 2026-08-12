@@ -18,7 +18,7 @@ export function FirmLogo({ className, priority = false }: FirmLogoProps) {
         alt={firmContent.name}
         width={631}
         height={144}
-        className="h-10 w-auto md:h-11"
+        className="h-12 w-auto md:h-14"
         priority={priority}
       />
     </span>

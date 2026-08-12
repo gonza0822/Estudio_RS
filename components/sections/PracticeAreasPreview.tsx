@@ -7,7 +7,7 @@ import { practiceAreasContent } from "@/lib/content/siteContent";
 /** Displays a concise practice-areas preview for the homepage. */
 export function PracticeAreasPreview() {
   return (
-    <section className="bg-surface py-16 md:py-20">
+    <section className="relative bg-surface py-16 md:py-20">
       <Container>
         <Reveal>
           <SectionHeading

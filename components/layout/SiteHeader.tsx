@@ -65,7 +65,7 @@ export function SiteHeader() {
         )}
       >
         <div className="pointer-events-auto w-full border-y border-border-soft/80 bg-cream/95 shadow-[0_8px_30px_rgba(44,40,36,0.06)] backdrop-blur-md">
-          <Container className="flex h-14 items-center justify-between md:h-16">
+          <Container className="flex h-16 items-center justify-between md:h-[4.5rem]">
             <Link href="/" aria-label={`Ir al inicio — ${firmContent.name}`}>
               <FirmLogo priority />
             </Link>
@@ -108,7 +108,7 @@ export function SiteHeader() {
       </header>
 
       {/* Reserves space under the floating bar on non-home pages. */}
-      {!isHome ? <div className="h-[4.75rem] md:h-[5.25rem]" aria-hidden="true" /> : null}
+      {!isHome ? <div className="h-20 md:h-[5.5rem]" aria-hidden="true" /> : null}
 
       <AnimatePresence>
         {isMenuOpen ? (

@@ -3,55 +3,82 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { HeroWaveBackground } from "@/components/sections/HeroWaveBackground";
 import { Container } from "@/components/ui/Container";
+import { cn } from "@/lib/cn";
 import { firmContent, heroImage } from "@/lib/content/siteContent";
 
-/** Home banner that starts at the viewport top so the floating header sits over it. */
+const heroTextParent = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+  },
+};
+
+const heroTextItem = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+/** Home banner with a pinned background that later sections cover on scroll. */
 export function HomeHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative isolate flex min-h-[30rem] items-center overflow-hidden md:min-h-[34rem] lg:min-h-[38rem]">
-      <Image
-        src={heroImage.src}
-        alt={heroImage.alt}
-        fill
-        priority
-        quality={90}
-        sizes="100vw"
-        className="object-cover object-[75%_center] md:object-right"
-      />
-
-      {/* Left cream plane for copy contrast */}
+    <section className="relative flex min-h-[30rem] items-center md:min-h-[34rem] lg:min-h-[38rem]">
       <div
-        className="absolute inset-0 bg-gradient-to-r from-cream via-cream/88 to-cream/20 md:via-cream/80 md:to-transparent"
+        className={cn(
+          "pointer-events-none inset-0 overflow-hidden",
+          reduceMotion ? "absolute" : "fixed z-0",
+        )}
         aria-hidden="true"
-      />
+      >
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="scale-110 object-cover object-[75%_center] blur-[6px] md:object-right"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/84 via-cream/72 to-cream/86" />
+        <HeroWaveBackground />
+      </div>
 
-      {/* Soft bottom blend into the page body */}
-      <div
-        className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-cream md:h-24"
-        aria-hidden="true"
-      />
-
-      <Container className="relative z-10 pt-28 pb-12 md:pt-32 md:pb-16">
+      <Container className="relative z-10 pt-28 pb-12 text-center md:pt-32 md:pb-16">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          className="max-w-xl md:max-w-2xl"
+          className="mx-auto max-w-xl md:max-w-2xl"
+          initial={reduceMotion ? false : "hidden"}
+          animate={reduceMotion ? undefined : "visible"}
+          variants={heroTextParent}
         >
-          <p className="text-sm font-medium text-navy">Hola, estamos para ayudarte</p>
-          <h1 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl lg:text-[2.6rem] lg:leading-[1.15]">
+          <motion.h1
+            variants={heroTextItem}
+            className="font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl lg:text-[2.6rem] lg:leading-[1.15]"
+          >
             {firmContent.name}
-          </h1>
-          <p className="mt-3 font-serif text-lg leading-7 text-navy md:text-xl">
+          </motion.h1>
+          <motion.p
+            variants={heroTextItem}
+            className="mt-3 font-serif text-lg leading-7 text-navy md:text-xl"
+          >
             {firmContent.slogan}
-          </p>
-          <p className="mt-3 max-w-xl text-pretty text-base leading-7 text-ink-muted">
+          </motion.p>
+          <motion.p
+            variants={heroTextItem}
+            className="mx-auto mt-3 max-w-xl text-pretty text-base leading-7 text-ink-muted"
+          >
             {firmContent.longDescription}
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+          </motion.p>
+          <motion.div
+            variants={heroTextItem}
+            className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          >
             <Link
               href="/contacto"
               className="inline-flex items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-cream transition-colors duration-200 hover:bg-navy-soft"
@@ -64,7 +91,7 @@ export function HomeHero() {
             >
               Cómo podemos ayudarte
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

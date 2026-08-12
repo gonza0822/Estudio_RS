@@ -7,7 +7,7 @@ import { aboutContent, teamMembers } from "@/lib/content/siteContent";
 /** Highlights both professionals with the same card language as Quiénes somos. */
 export function TeamPreview() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="relative bg-cream py-16 md:py-20">
       <Container>
         <Reveal>
           <SectionHeading

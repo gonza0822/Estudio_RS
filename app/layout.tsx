@@ -28,7 +28,7 @@ export const metadata: Metadata = buildPageMetadata(
 
 export const viewport: Viewport = {
   colorScheme: "light",
-  themeColor: "#b9d8f7",
+  themeColor: "#f3f7fb",
 };
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${workSans.variable} ${playfairDisplay.variable} h-full antialiased`}
       style={{ colorScheme: "light" }}
     >
-      <body className="min-h-full bg-cream font-sans text-ink">
+      <body className="min-h-full bg-surface font-sans text-ink">
         <div className="flex min-h-full flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
